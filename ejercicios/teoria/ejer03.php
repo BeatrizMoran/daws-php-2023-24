@@ -9,10 +9,10 @@
     <h1>Ejercicio 3</h1>
     <p><b>Enunciado: </b><br>. Crea un programa que muestre el nombre de usuario enviado en la URL:</p>
     <?php 
-        $user = $_GET["nombre"];
-        $edad = 22;
+        $user = $_GET["user"];
+        
     ?>
 
-    <h3> <?= "Mi amigo $nombre tiene $edad años" ?> </h3>
+    <h3> <?= "Bienvenido, $user" ?> </h3>
 </body>
 </html>
