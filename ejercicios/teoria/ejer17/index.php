@@ -19,6 +19,8 @@ function comprobar($usuarios) {
     $user = $_GET["usuario"];
     $passwd = $_GET["passwd"];
 
+    //array_key_exists($usuario, $usuarios);
+
     if (isset($usuarios[$user])) {
         if ($usuarios[$user]["passwd"] === $passwd) {
             return "Usuario y contraseña correctos"; // Usuario y contraseña correctos
