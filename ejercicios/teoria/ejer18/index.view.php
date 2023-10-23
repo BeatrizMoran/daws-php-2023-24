@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ejer15</title>
+    <title>ejer18</title>
 </head>
 <body>
-    <h1>Ejercicio 17</h1>
+    <h1>Ejercicio 18</h1>
     <p><b>Enunciado: </b><br>Crea una función que reciba un número indicando el día de la semana y que
 muestre por pantalla el día de la semana. En caso de recibir otro número que no
 esté entre el 1 y el 7, mostrará el mensaje “No es ningún día de la semana". Utiliza
