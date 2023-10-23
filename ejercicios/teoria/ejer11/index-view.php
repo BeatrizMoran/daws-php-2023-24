@@ -11,7 +11,6 @@
 de las cadenas</p>
    
 <?php
-   $c1 = $_GET["c1"];
 
    echo combinar($c1);
 
