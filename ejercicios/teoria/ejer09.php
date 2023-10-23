@@ -16,7 +16,7 @@ por pantalla</p>
    $c2 = $_GET["c2"];
 
    function combinar($c1, $c2){
-    return $c1 . $c2;
+    return $c1 . " " . $c2;
    }
 
    echo "La concatenacion es: " . combinar($c1, $c2);
