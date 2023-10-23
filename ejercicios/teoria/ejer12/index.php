@@ -2,6 +2,9 @@
 
 $ciudades = ["Paris", "Berlin", "Amsterdam", "Praga"];
 
+
+$n = 2;
+$valor = "Vitoria";
    function getValor($ciudades, $n){
     return  $ciudades[$n-1] . " , ";
    }

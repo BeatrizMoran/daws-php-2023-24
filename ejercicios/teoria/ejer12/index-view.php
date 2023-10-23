@@ -11,13 +11,6 @@
 continuación crea las siguientes funciones: </p>
    
 <?php
-   $ciudades = ["Paris", "Berlin", "Amsterdam", "Praga"];
-
-
-   $n = 2;
-   $valor = "Vitoria";
-
-
    echo getValor($ciudades, 2);
    echo getValor($ciudades, 3);
 ?>
