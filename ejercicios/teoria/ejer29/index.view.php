@@ -10,8 +10,8 @@
     <p><b>Enunciado: </b><br> Modifica el ejercicio número 24 para obtener el mismo resultado empleando
 una estructura foreach <p>
 <br>
-<!--
-<table>
+
+<table border="1">
     <?php 
         foreach($agenda as $persona){?>
             <tr>
@@ -19,13 +19,10 @@ una estructura foreach <p>
                 <td><?= $persona['apellidos'];?></td>
                 <td><?= $persona['telefono'];?></td>
                 <td><?= $persona['email'];?></td>
-        </tr>
-
-     <? }?>
+            </tr>
+     <?php }?>
 </table>
-        -->
 
-<?= $tablaFinal;?>
 
 </body>
 </html>

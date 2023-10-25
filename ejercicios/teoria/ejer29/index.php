@@ -32,29 +32,7 @@ $agenda = [
     ],
 ];
 
-$tabla =  "<table border='1'>
-<tr>
-    <th>Nombre</th>
-    <th>Apellidos</th>
-    <th>Teléfono</th>
-    <th>Email</th>
-</tr>";
-
-function imprimirTabla($agenda) {
-    $datos = "";
-    foreach($agenda as $persona) {
-        $datos .= "<tr>
-            <td>{$persona['nombre']}</td>
-            <td>{$persona['apellidos']}</td>
-            <td>{$persona['telefono']}</td>
-            <td>{$persona['email']}</td>
-        </tr>";
-    }
-
-    return $datos;
-}
-
-$tablaFinal = $tabla . imprimirTabla($agenda);
 
 include "index.view.php";
+
 ?>
