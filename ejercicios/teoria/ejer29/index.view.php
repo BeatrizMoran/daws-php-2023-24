@@ -12,6 +12,12 @@ una estructura foreach <p>
 <br>
 
 <table border="1">
+    <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Telefono</th>
+        <th>Email</th>
+</tr>
     <?php 
         foreach($agenda as $persona){?>
             <tr>

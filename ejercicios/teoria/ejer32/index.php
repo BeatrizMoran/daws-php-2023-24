@@ -22,33 +22,13 @@ $agenda = [
     ]
 ];
 
-$tabla =  "<table border='1'>
-<tr>
-    <th>Nombre</th>
-    <th>Nota 1</th>
-    <th>Nota 2</th>
-    <th>Nota media</th>
-</tr>";
 
-function imprimirTabla($agenda) {
-    $datos = "";
-    foreach($agenda as $persona) {
-        $datos .= "<tr>
-            <td>{$persona['nombre']}</td>
-            <td>{$persona['nota1']}</td>
-            <td>{$persona['nota2']}</td>
-            <td>calcularNotaMedia();</td>
-        </tr>";
-    }
-
-    return $datos;
-}
-
-function calcularNotaMedia(){
+function calcularNotaMedia($n1, $n2){
+    return ($n1 + $n2)/2;
 
 }
 
-$tablaFinal = $tabla . imprimirTabla($agenda);
+
 
 include "index.view.php";
-?>
+
