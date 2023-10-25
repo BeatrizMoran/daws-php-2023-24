@@ -6,12 +6,12 @@ function sumar($n){
         if($i%2 === 0)
             $suma = $suma + $i;
         elseif($suma > 100){
-            
+            return $suma;
         }
     }
     return $suma;
 }
 
-$resultado = sumar(10);
+$resultado = sumar(300);
 
 include "index.view.php";
