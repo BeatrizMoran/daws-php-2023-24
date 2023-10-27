@@ -1,6 +1,7 @@
 <?php
 
 
+
    $grados = $_POST["temp"];
    $prueba = $_POST["c"];
 
