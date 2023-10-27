@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ejer10</title>
+    <title>ejer1</title>
 </head>
 <body>
-    <h1>Ejercicio 12</h1>
+    <h1>Ejercicio 1</h1>
     <p><b>Enunciado: </b><br>Crea un convertidor de grados Celsius a Farenheit (y viceversa). La aplicación
 pedirá una cantidad al usuario y la unidad mediante un formulario. Una vez enviado,
 mostrará el resultado de la conversión realizada. El formulario siempre se mostrará,
