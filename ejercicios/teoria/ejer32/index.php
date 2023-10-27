@@ -33,18 +33,19 @@ $tabla =  "<table border='1'>
 function imprimirTabla($agenda) {
     $datos = "";
     foreach($agenda as $persona) {
+        
         $datos .= "<tr>
             <td>{$persona['nombre']}</td>
             <td>{$persona['nota1']}</td>
             <td>{$persona['nota2']}</td>
-            <td>calcularNotaMedia();</td>
+            <td></td>
         </tr>";
     }
 
     return $datos;
 }
 
-function calcularNotaMedia(){
+function calcularNotaMedia($nota1, $nota2){
 
 }
 
