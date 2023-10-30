@@ -1,0 +1,79 @@
+/* Estilos para la tabla */
+
+#contenedor{
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    grid-template-rows: auto;
+    gap: 1em;
+}
+
+#carrito{
+    padding: 10px;
+    border-radius: 20px;
+    background-color: lightblue;
+}
+
+.enlace{
+    background-color: lightgray;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    margin-left: 25%;
+    margin-top: 40px;
+    text-align: center;
+    width: 40%;
+    border-radius: 10px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: steelblue;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Estilos para el formulario */
+form {
+    margin: 0 auto;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="hidden"],
+input[type="number"] {
+    width: calc(100% - 16px);
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
