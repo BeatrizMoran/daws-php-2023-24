@@ -15,7 +15,11 @@ mensaje de bienvenida y un enlace para cerrar sesión. Al hacer click en el enla
 sesión, la aplicación destruirá información de la sesión almacenada.
  </p>
    
- <p><?=$mensaje ?></p>
+ <p><?php 
+ if(isset($usuario) && isset($passwd))
+ {
+    echo $mensaje;
+ } ?></p>
 
     <h2>Añadir asistente</h2>
     <form action="index.php" method="post">
