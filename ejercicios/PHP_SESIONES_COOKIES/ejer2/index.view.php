@@ -7,10 +7,8 @@
 </head>
 <body>
     <h1>Ejercicio 02</h1>
-    <p><b>Enunciado: </b><br>Crea una página que tenga un formulario con un campo de texto en el que poder
-almacenar un nombre de usuario. La aplicación guardará el texto introducido en una cookie
-(sin especificar la duración) de nombre “usuario” y mostrará el último valor almacenado
-siempre que la cookie contenga algún valor.
+    <p><b>Enunciado: </b><br> Añade a la aplicación anterior un botón o enlace para borrar la cookie de nombre
+“usuario”
  </p>
    
 
@@ -23,6 +21,10 @@ siempre que la cookie contenga algún valor.
     <label>Introduce el texto que deseas almacenar:</label>
     <input type="text" name="texto" id="texto"><br>
     <input type="submit" value="Calcular">
+</form>
+<form action="index.php" method="post">
+    <input type="hidden" name="borrar_cookie" value="1">
+    <input type="submit" value="Borrar Cookie">
 </form>
 
 
