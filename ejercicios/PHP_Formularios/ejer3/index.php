@@ -2,7 +2,6 @@
 
 $numeros = [];
 
-$veces = 0;
 
 for ($i=0; $i < 21 ; $i++) { 
    $numeroAleatorio = random_int(1, 10);

@@ -26,6 +26,7 @@ if(isset($_POST["num"])){
 <form action="index.php" method="post">
     <label>Introduce tu numero:</label>
     <input type="number" name="num" id="num"><br>
+    
     <input type="submit" value="¡Probar suerte!" id="enviar">
 </form>
 
