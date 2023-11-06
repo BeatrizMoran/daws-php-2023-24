@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+}
+
+#contenedor{
+    display: flex;
+    justify-content: space-around;
+}
+
+table th{
+    padding: 10px;
+    background-color: steelblue;
+}
+
+table{
+    margin-top: 20px;
+    background-color: lightgray;
+    border-collapse: collapse;
+
+    padding: 20px;
+}
+
+
+#tabla{
+    width: 70%;
+
+}
+
+#formulario{
+    width: 30%;
+    padding: 20px;
+}
+
+table td {
+    padding: 20px;
+}
+
+input{
+    margin: 10px 0;
+    padding: 5px;
+    display: block;
+}
