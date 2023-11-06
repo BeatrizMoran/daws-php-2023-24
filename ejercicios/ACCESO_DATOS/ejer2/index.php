@@ -17,23 +17,48 @@ function realizarAccion($accion, $dbh){
     
     switch($accion){
         case "insertar":
-            if(isset($_POST["dni"])){
+            if(isset($_GET["dni"])){
                 crearEmpleado($dbh);
             }
             break;
         case "eliminar":
-                if(isset($_POST["dni"])){
-                    eliminarEmpleado($dbh, $_POST["dni"]);
+                if(isset($_GET["persona"])){
+                    $dni = $_GET["persona"];
+                    eliminarEmpleado($dbh,$dni );
                 }
                 break;
+        case "vaciar":
+            eliminarTodo($dbh);
+            break;
         case "verDetalle":
+            $empleado = verDetalleEmpleado($dbh, $_GET["persona"]);
+            require "views/detalleEmpleado.view.php";
+            exit();
             break;
 
     }
 }
 
+function verDetalleEmpleado($dbh, $dni){
+    $stmt = $dbh->prepare("select * from empleados where dni = :dni");
+
+    $data = array("dni" => $dni);
+
+    $stmt->execute($data);
+
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+}
+
+function eliminarTodo($dbh){
+    $stmt = $dbh->prepare("delete from empleados");
+    $stmt->execute();
+
+}
+
 function eliminarEmpleado($dbh, $dni){
-    $stmt= $dbh->prepare("
+   $stmt= $dbh->prepare("
     DELETE FROM empleados 
     WHERE DNI = :dni
 ");
@@ -48,30 +73,33 @@ $data = array("dni" => $dni);
 function crearEmpleado($dbh){
 
    
-    $nombre = $_POST["nombre"];
-    $apellidos = $_POST["apellidos"];
-    $ed = $_POST["edad"];
-    $email = $_POST["email"];
-    $dni = $_POST["dni"];
+    $nombre = $_GET["nombre"];
+    $apellidos = $_GET["apellidos"];
+    $ed = $_GET["edad"];
+    $email = $_GET["email"];
+    $dni = $_GET["dni"];
 
     $edad = intval($ed);
 
-    //$cv = $_POST["cv"];
-    //$fechaNac = $_POST["fechaNac"];
+    $cv = $_GET["cv"];
+    $fechaNac = $_GET["fechaNac"];
+    $sexo = $_GET["sexo"];
+
 
 
     $empleado = array("nombre" => $nombre,
                     "apellidos" => $apellidos,
                     "edad" => $edad,
                     "email" => $email,
-                    "dni" => $dni);
-                   // "cv" => $cv, 
-                    //"fechaNac" => $fechaNac);
+                    "dni" => $dni,
+                   "cv" => $cv, 
+                    "fechaNac" => $fechaNac,
+                    "sexo" => $sexo);
 
     //insertar
     $stmt= $dbh->prepare("
- INSERT INTO empleados (dni, nombre, apellidos, edad, email)
- values (:dni, :nombre, :apellidos, :edad, :email)" );
+ INSERT INTO empleados (dni, nombre, apellidos, edad, email, fechaNac, curriculum, sexo)
+ values (:dni, :nombre, :apellidos, :edad, :email, :fechaNac, :cv, :sexo)" );
 
  $stmt->execute($empleado); 
     
@@ -79,8 +107,8 @@ function crearEmpleado($dbh){
 }
 
 // Si el usuario ha realizado una acción, la realizamos.
-if(isset($_POST["accion"])) {
-    $accion = $_POST["accion"];
+if(isset($_GET["accion"])) {
+    $accion = $_GET["accion"];
     realizarAccion($accion, $dbh);
 }
 

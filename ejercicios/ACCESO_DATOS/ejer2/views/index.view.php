@@ -18,12 +18,13 @@
                     <a href="index.php?accion=eliminar&persona=<?=$emp['dni']?>">Eliminar</a></td>
                 </tr>
                 <?php } ?>
-        
         </table>
+        <a href="index.php?accion=vaciar">Vaciar lista</a>
+
     </div>
     <div id="formulario">
         <h2>Añadir nuevo empleado</h2>
-        <form action="index.php" method="post">
+        <form action="index.php" method="get">
             <input type="text" placeholder="Nombre" name="nombre" id="nombre" required="require">
             <input type="text" placeholder="Apellidos" name="apellidos" id="apellidos" required="require">
             <input type="number" placeholder="Edad" name="edad" required="require">
@@ -38,7 +39,6 @@
             <input type="hidden" name="accion" value="insertar">
             <input type="submit" value="Añadir" name="aceptar" id="aceptar">
         </form>
-        <a href="index.php?accion=vaciar">Vaciar lista</a>
     </div>
 </div>
 <?php require("partials/footer.php") ?>

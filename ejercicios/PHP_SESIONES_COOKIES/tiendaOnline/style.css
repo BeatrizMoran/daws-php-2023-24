@@ -1,0 +1,54 @@
+body{
+    height: 100vh;
+}
+
+h1{
+    text-align: center;
+    text-transform: uppercase;
+    color: steelblue;
+}
+
+#contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table{
+    border-radius: 10px;
+    background-color: lightgray;
+    border-collapse: collapse;
+}
+
+table td{
+    padding: 30px;
+}
+
+table th{
+    
+    padding: 20px;
+
+    background-color: rgb(104, 203, 233);
+
+}
+
+form{
+    text-align: center;
+}
+
+form input[type="button"]{
+    padding: 10px;
+    text-transform: uppercase;
+    background-color: rgb(104, 203, 233);
+    border-radius: 10px;
+    cursor: pointer;
+    width: 80%;
+    text-align: center;
+    margin: 10px auto; /* Center the button horizontally */
+
+    
+}
+
+form input[type="number"]{
+    width: 50px;
+}
