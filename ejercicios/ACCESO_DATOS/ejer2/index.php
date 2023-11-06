@@ -22,23 +22,27 @@ function realizarAccion($accion, $dbh){
             }
             break;
         case "eliminar":
-            eliminarEmpleado($dbh);
-            
-            break;
+                if(isset($_POST["dni"])){
+                    eliminarEmpleado($dbh, $_POST["dni"]);
+                }
+                break;
         case "verDetalle":
             break;
 
     }
 }
 
-function eliminarEmpleado($dbh){
+function eliminarEmpleado($dbh, $dni){
     $stmt= $dbh->prepare("
-    delete from empleados 
-    where dni = :dni " );
-   
-    $stmt->bindParam(':dni', $_POST["dni"]);
+    DELETE FROM empleados 
+    WHERE DNI = :dni
+");
 
-    $stmt->execute(); 
+$data = array("dni" => $dni);
+   
+   
+
+    $stmt->execute($data); 
 }
 
 function crearEmpleado($dbh){
