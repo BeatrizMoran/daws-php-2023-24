@@ -10,6 +10,6 @@
                 <?php } ?>
     </tr>
 </table>
-<a href="../index.php">Volver</a>
+<a href="index.php">Volver</a>
 <?php require 'partials/footer.php' ?>
 

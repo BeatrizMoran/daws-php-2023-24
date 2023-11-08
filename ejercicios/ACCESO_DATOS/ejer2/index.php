@@ -98,7 +98,7 @@ function crearEmpleado($dbh){
 
     //insertar
     $stmt= $dbh->prepare("
- INSERT INTO empleados (dni, nombre, apellidos, edad, email, fechaNac, curriculum, sexo)
+ INSERT INTO empleados (dni, nombre, apellidos, edad, email, fechaNac, cv, sexo)
  values (:dni, :nombre, :apellidos, :edad, :email, :fechaNac, :cv, :sexo)" );
 
  $stmt->execute($empleado); 
