@@ -1,5 +1,13 @@
 <?php require 'partials/head.php' ?>
 <div id="contenedor">
+    <div>
+    <div id="formFiltrar">
+        <form action="index.php" method="get">
+            <input type="text" name="nombreExacto" placeholder="Introduce el nombre exacto">
+            <input type="hidden" name="accion" value="filtrar">
+            <input type="submit" value="Filtrar" id="filtrar">
+        </form>
+    </div>
     <div id="tabla">
         <table>
             <tr>
@@ -21,6 +29,7 @@
         </table>
         <a href="index.php?accion=vaciar">Vaciar lista</a>
 
+    </div>
     </div>
     <div id="formulario">
         <h2>Añadir nuevo empleado</h2>

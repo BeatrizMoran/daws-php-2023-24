@@ -46,3 +46,7 @@ input{
     padding: 5px;
     display: block;
 }
+
+#formFiltrar form input{
+    display: inline-block;
+}

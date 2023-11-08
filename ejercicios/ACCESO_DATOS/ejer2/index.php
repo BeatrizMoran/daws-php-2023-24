@@ -1,5 +1,5 @@
 <?php
-
+$empleados = "";
 function connect($host, $dbname, $user, $pass){
     try{
         $dbh = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
@@ -19,6 +19,9 @@ function realizarAccion($accion, $dbh){
         case "insertar":
             if(isset($_GET["dni"])){
                 crearEmpleado($dbh);
+                $empleados = getAll($dbh);
+                require "views/index.view.php" ;
+                exit();
             }
             break;
         case "eliminar":
@@ -35,7 +38,29 @@ function realizarAccion($accion, $dbh){
             require "views/detalleEmpleado.view.php";
             exit();
             break;
+        case "filtrar":
+            $nombre = $_GET["nombreExacto"];
+            $empleados = filtrar($dbh,$nombre );
+            require "views/index.view.php" ;
+            exit();
+            break;
 
+    }
+}
+
+function filtrar($dbh, $nombre){
+    if($nombre === " "){
+        return getAll($dbh);
+    }
+    else{
+        $stmt = $dbh->prepare("SELECT dni, nombre, apellidos from empleados where nombre = :nombre");
+
+        $data = array("nombre" => $nombre);
+
+        $stmt->execute($data);
+
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 
@@ -106,6 +131,8 @@ function crearEmpleado($dbh){
 
 }
 
+$empleados = getAll($dbh);
+
 // Si el usuario ha realizado una acción, la realizamos.
 if(isset($_GET["accion"])) {
     $accion = $_GET["accion"];
@@ -114,14 +141,18 @@ if(isset($_GET["accion"])) {
 
 
 
+
+
+
+
 function getAll($dbh){
-    $stmt = $dbh->prepare("SELECT dni, nombre, apellidos from empleados");
+        $stmt = $dbh->prepare("SELECT dni, nombre, apellidos from empleados");
     $stmt->execute();
 
 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-$empleados = getAll($dbh);
+
 
 require "views/index.view.php" ;
